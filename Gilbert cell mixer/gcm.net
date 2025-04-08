@@ -1,0 +1,34 @@
+* C:\Users\Arvind\Downloads\gandthod.asc
+M1 outp N006 inp inp NM l=0.18u w=6u
+VDD N001 0 1.8V
+I§RF+ inp 0 SINE(1m 0.25m 1.1g) AC 1
+R1 outp N001 300
+V§LO+ N006 0 PULSE(0 1.8 0 100p 100p 0.3n 1n)
+I§RF- N005 0 SINE(1m -0.25m 1.1g) AC 1
+M3 outp N007 N005 N005 NM l=0.18u w=6u
+M4 outn N007 inp inp NM l=0.18u w=6u
+M5 outn N006 N005 N005 NM l=0.18u w=6u
+V§LO- N007 0 PULSE(1.8 0 0 100p 100p 0.3n 1n)
+R2 outn N001 300
+E1 out 0 outp outn 1
+R3 out N002 50
+L1 N003 N002 20.6n
+L2 N004 N003 76.9n
+C1 N003 0 22.5p
+C2 N004 0 30.7p
+C3 out_lpf 0 8.2p
+L3 out_lpf N004 56.3n
+R4 0 out_lpf 50
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Arvind\AppData\Local\LTspice\lib\cmp\standard.mos
+* .op
+;ac dec 100 1 10g
+* ;.include tsmc180nmcmos.lib
+* ;.dc I1 -165n 165n 1n
+.lib mosfet_018.lib
+* .dc v1 0 2.4
+.options plotwinsize=0
+.tran 0 100n 0 10p
+.backanno
+.end
