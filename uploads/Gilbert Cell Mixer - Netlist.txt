@@ -1,0 +1,31 @@
+* Gilbert Cell Mixer - Netlist
+
+* Voltage Sources for RF and LO signals
+V_RF N1 0 SIN(0 1 10M )         ; RF signal (1V amplitude, 10 MHz)
+V_LO N2 0 SIN(0 1 20M )         ; LO signal (1V amplitude, 20 MHz)
+
+* NPN Transistors for Q1, Q2 (input transistors)
+Q1 N3 N4 N5 NPN                 ; Q1 (NPN transistor)
+Q2 N6 N7 N8 PNP                 ; Q2 (PNP transistor)
+
+* PNP Transistors for Q3, Q4 (output transistors)
+Q3 N9 N10 N11 NPN               ; Q3 (NPN transistor)
+Q4 N12 N13 N14 PNP              ; Q4 (PNP transistor)
+
+* Bias Resistors for Transistor Bases
+R1 N3 N4 1k                     ; Resistor for Q1 base (bias)
+R2 N6 N7 1k                     ; Resistor for Q2 base (bias)
+R3 N9 N10 1k                    ; Resistor for Q3 base (bias)
+R4 N12 N13 1k                   ; Resistor for Q4 base (bias)
+
+* Capacitors for Coupling the Signals (Blocking DC)
+C1 N1 N3 10pF                   ; Capacitor from RF signal to Q1 base
+C2 N2 N6 10pF                   ; Capacitor from LO signal to Q2 base
+C3 N8 N14 10pF                  ; Capacitor from output to next stage
+
+* Output Load Resistor (optional)
+RL N14 0 10k                    ; Load resistor at output node (IF signal)
+
+* Simulation Command (Transient)
+.tran 0 1ms                      ; Run transient simulation for 1ms
+.end                            ; End of netlist
