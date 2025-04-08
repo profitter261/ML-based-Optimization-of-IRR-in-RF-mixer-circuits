@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRR Optimization</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            min-height: 100vh;
+            background: url("{{ url_for('static', filename='images/gilbert cell mixer schematic background 2.jpg') }}") no-repeat center top;
+            background-size: cover;
+            animation: scrollBackground 2s infinite alternate ease-in-out;
+        }        
+
+        @keyframes scrollBackground {
+            0% { background-position: center 0px; }
+            100% { background-position: center 1px; }
+        }
+
+        h2 {
+            color: rgb(225, 67, 39);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 50%;
+            background: rgba(255, 255, 255, 0.8); /* White Transparent Background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            text-align: left;
+        }
+        
+        input, select, button {
+            background: rgba(255, 255, 255, 1); /* Fully opaque input fields */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            padding: 10px;
+        }
+        
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: rgb(193, 60, 33);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: rgb(193, 60, 33);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgb(225, 67, 39);
+        }
+
+        input[type="file"] {
+            border: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>IRR Optimization for Gilbert Cell Mixer</h2>
+
+    <div class="container">
+        <form action="/optimize" method="post" enctype="multipart/form-data">
+            <label>Enter IRR Value:</label>
+            <input type="number" name="irr" step="0.01" required>
+
+            <label>Upload Gilbert Cell Netlist:</label>
+            <input type="file" name="netlist_file">
+
+            <label>Select Application:</label>
+            <select name="application">
+                <option value="Radar">Radar</option>
+                <option value="Wireless">Wireless</option>
+                <option value="Instrumentation">Instrumentation</option>
+                <option value="Satellite">Satellite</option>
+            </select>
+
+            <button type="submit">Optimize</button>
+        </form>
+    </div>
+
+</body>
+</html>

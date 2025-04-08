@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Optimization Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="application">Select Application:</label>
+        <select name="application" id="application">
+            <option value="Application 1">Application 1</option>
+            <option value="Application 2">Application 2</option>
+            <option value="Application 3">Application 3</option>
+            <option value="Application 4">Application 4</option>
+        </select>
+        <br><br>
+        <label for="irr_dataset">Upload IRR Dataset (CSV/JSON):</label>
+        <input type="file" name="irr_dataset" id="irr_dataset" required>
+        <br><br>
+        <button type="submit">Run Optimization</button>
+    </form>
+
+    {% if selected_application %}
+        <div class="result">
+            <h2>Results for {{ selected_application }}</h2>
+            
+            <p><strong>Optimized Parameters:</strong></p>
+            <p>Q-Factor: {{ after_q }}</p>
+            <p>Notch Frequency: {{ notch_freq }} Hz</p>
+
+            <p><strong>Image Rejection Ratio (IRR):</strong></p>
+            <p>Before Optimization: {{ before_irr }}</p>
+            <p>After Optimization: {{ after_irr }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

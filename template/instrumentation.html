@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumentation Optimization Result</title>
+    <style>
+        /* General Styles */
+        body {
+            background: url("{{ url_for('static', filename='images/gilbert cell mixer schematic background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            animation: scrollBackground 6s infinite alternate ease-in-out;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            background: rgba(217, 33, 20, 0.9); /* Elegant deep red with slight transparency */
+            color: white;
+            font-size: 2em;
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .box {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color:rgb(185, 58, 41);
+            border-bottom: 2px solidrgb(219, 102, 52);
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background:rgb(226, 87, 52);
+            color: white;
+        }
+
+        tr:hover {
+            background:rgb(134, 128, 128);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background:rgb(15, 18, 20);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        a:hover {
+            background:rgb(236, 44, 10);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Instrumentation Application - IRR Optimization</h1>
+
+    <div class="container">
+        <!-- Left Side: IRR Values, Graph, Notch Filter Parameters -->
+        <div class="box">
+            <h3>IRR Optimization</h3>
+            <p><b>Before Optimization IRR:</b> {{ irr }} dB</p>
+            <p><b>After Optimization IRR:</b> {{ optimized_irr }} dB</p>
+
+            <h3>Notch Filter Parameters</h3>
+            <p><b>Quality Factor (Q):</b> {{ Q_factor }}</p>
+            <p><b>Notch Frequency:</b> {{ f_notch }} Hz</p>
+
+            <h3>IRR Comparison</h3>
+            <img src="{{ url_for('static', filename='uploads/' + graph_filename) }}" alt="IRR Comparison Graph">
+        </div>
+
+        <!-- Right Side: Gilbert Cell Mixer Parameters Table -->
+        <div class="box">
+            <h3>Gilbert Cell Mixer Parameters Comparison</h3>
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Before Optimization</th>
+                    <th>After Optimization</th>
+                </tr>
+                <tr>
+                    <td>RF Voltage</td>
+                    <td>{{ V_RF_Voltage }}</td>
+                    <td>1 V</td>
+                </tr>
+                <tr>
+                    <td>RF Frequency</td>
+                    <td>{{ V_RF_Frequency }}</td>
+                    <td>500 MHz</td>
+                </tr>
+                <tr>
+                    <td>LO Voltage</td>
+                    <td>{{ V_LO_Voltage }}</td>
+                    <td>1.2 V</td>
+                </tr>
+                <tr>
+                    <td>LO Frequency</td>
+                    <td>{{ V_LO_Frequency }}</td>
+                    <td>1 GHz</td>
+                </tr>
+                <tr>
+                    <td>Load Resistor (RL)</td>
+                    <td>{{ RL }}</td>
+                    <td>10 kΩ</td>
+                </tr>
+            </table>
+            <h3>Notch Filter AC Analysis</h3>
+            <img src="{{ url_for('static', filename='uploads/' + ac_graph_filename) }}" alt="Notch Filter AC Response">
+        </div>
+    </div>
+
+    <a href="/">Go Back</a>
+
+</body>
+</html>
