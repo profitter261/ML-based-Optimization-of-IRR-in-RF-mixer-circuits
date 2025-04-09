@@ -63,19 +63,19 @@ The application features a simple, intuitive UI built using HTML/CSS/JavaScript 
 
 ### Instrumentation
 
-![Instrumentation](./Instrumentation_graph.png)
+![Instrumentation](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/static/Instrumentation_irr_plot.png?raw=true)
 
 ### Radar Systems
 
-![Radar](./Radar_graph.png)
+![Radar](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/static/Radar_irr_plot.png?raw=true)
 
 ### Satellite Communications
 
-![Satellite](./Satellite_graph.png)
+![Satellite](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/static/Wireless_irr_plot.png?raw=true)
 
 ### Wireless Communication
 
-![Wireless](./Wireless_graph.png)
+![Wireless](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/static/statics/Satellite_graph.png?raw=true)
 
 ---
 
@@ -108,6 +108,6 @@ The application features a simple, intuitive UI built using HTML/CSS/JavaScript 
 
 ---
 
-## 🤝 Acknowledgements
+## Acknowledgements
 - Guidance from academic mentors  
 - Tools and support provided by LTSpice, MATLAB, and Python open-source community
