@@ -55,7 +55,7 @@ The application features a simple, intuitive UI built using HTML/CSS/JavaScript 
 ![UI Home](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/Screenshot%202025-03-26%20110213.png)
 
 ### Dataset Upload Page
-![UI Upload](./UI_upload.png)
+![UI Upload](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/Gilbert%20cell%20mixer/Screenshot%202025-04-09%20224640.png)
 
 ---
 
