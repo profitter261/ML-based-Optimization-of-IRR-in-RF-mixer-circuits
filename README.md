@@ -15,8 +15,6 @@ The project is a web-based platform built using Flask that enables users to opti
 
 This project bridges hardware simulation with a user-friendly web interface, delivering accurate, fast, and visually interpretable IRR optimization.
 
-# IRR Optimization Using Passive Notch Filters with AI/ML for Gilbert Cell Mixer
-
 ## Project Overview
 This project demonstrates the **optimization of Image Rejection Ratio (IRR)** for a **Gilbert Cell Mixer** using AI/ML-assisted passive notch filter design. The IRR was optimized for four different applications: **Instrumentation, Radar, Satellite, and Wireless communication systems**. By processing HB analysis outputs from LTspice, the system significantly enhances the IRR and visualizes improvements.
 
@@ -38,7 +36,7 @@ This project demonstrates the **optimization of Image Rejection Ratio (IRR)** fo
 
 ---
 
-## 🔬 Methodology
+## Methodology
 
 1. **Design a Gilbert Cell Mixer** circuit in LTSpice.
 2. **Simulate HB analysis** to extract frequency, amplitude, and phase data.
@@ -49,39 +47,39 @@ This project demonstrates the **optimization of Image Rejection Ratio (IRR)** fo
 
 ---
 
-## 🎯 User Interface (UI)
+## User Interface (UI)
 
 The application features a simple, intuitive UI built using HTML/CSS/JavaScript with Python backend.
 
-### 🖥️ Homepage
+### Homepage
 ![UI Home](./UI_home.png)
 
-### 📂 Dataset Upload Page
+### Dataset Upload Page
 ![UI Upload](./UI_upload.png)
 
 ---
 
-## 📊 Results & Visualizations
+## Results & Visualizations
 
-### 📍 Instrumentation
+### Instrumentation
 
 ![Instrumentation](./Instrumentation_graph.png)
 
-### 📍 Radar Systems
+### Radar Systems
 
 ![Radar](./Radar_graph.png)
 
-### 📍 Satellite Communications
+### Satellite Communications
 
 ![Satellite](./Satellite_graph.png)
 
-### 📍 Wireless Communication
+### Wireless Communication
 
 ![Wireless](./Wireless_graph.png)
 
 ---
 
-## 📈 Observations
+## Observations
 
 | Application      | Initial IRR (dB) | Optimized IRR (dB) |
 |------------------|------------------|--------------------|
