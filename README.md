@@ -52,7 +52,7 @@ This project demonstrates the **optimization of Image Rejection Ratio (IRR)** fo
 The application features a simple, intuitive UI built using HTML/CSS/JavaScript with Python backend.
 
 ### Homepage
-![UI Home](./UI_home.png)
+![UI Home](https://github.com/profitter261/ML-based-Optimization-of-IRR-in-RF-mixer-circuits/blob/main/Screenshot%202025-03-26%20110213.png)
 
 ### Dataset Upload Page
 ![UI Upload](./UI_upload.png)
