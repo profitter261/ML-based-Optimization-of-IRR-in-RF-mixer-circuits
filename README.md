@@ -32,7 +32,6 @@ This project demonstrates the **optimization of Image Rejection Ratio (IRR)** fo
 - `NumPy`, `Pandas` – Data handling
 - `Matplotlib` – Visualization
 - `Scikit-learn` – ML models for optimization
-- `SciPy` – Signal processing and filter design
 
 ---
 
